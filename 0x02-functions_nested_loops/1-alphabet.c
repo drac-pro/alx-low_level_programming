@@ -7,8 +7,10 @@
  */
 void print_alphabet(void)
 {
+	char ch;
+
 	/*using function _putchar() found in main.h*/
-	for (char ch = 'a'; ch <= 'z'; ch++)
+	for (ch = 'a'; ch <= 'z'; ch++)
 	{
 		_putchar(ch);
 	}
