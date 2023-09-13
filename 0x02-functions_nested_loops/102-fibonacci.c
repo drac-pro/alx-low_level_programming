@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	unsigned int fib, a = 1, b = 2;
+	long unsigned int fib, a = 1, b = 2;
 	int i;
 
 	/* Print out the fibonacci numbers up to the 50th term */
@@ -15,10 +15,10 @@ int main(void)
 	{
 		if (i == 50)
 		{
-		printf("%d\n", a);
+		printf("%ld\n", a);
 		break;
 		}
-		printf("%d, ", a);
+		printf("%ld, ", a);
 		fib = a + b;
 		a = b;
 		b = fib;
