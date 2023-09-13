@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	long unsigned int fib, a = 1, b = 2;
+	unsigned long int fib, a = 1, b = 2;
 	int i;
 
 	/* Print out the fibonacci numbers up to the 50th term */
