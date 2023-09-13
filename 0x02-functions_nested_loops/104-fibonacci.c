@@ -10,7 +10,7 @@ int main(void)
 	long double fib, a = 1, b = 2;
 	int i;
 
-	/* Print out the fibonacci numbers up to the 50th term */
+	/* Print out the fibonacci numbers up to the 98th term */
 	for (i = 1; i <= 98; i++)
 	{
 		if (i == 98)
