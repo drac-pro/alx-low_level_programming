@@ -9,7 +9,7 @@ int main(void)
 {
 	int fib, a = 1, b = 2, i, sum;
 
-	for (i = 1;;i++)
+	for (i = 1;; i++)
 	{
 		if (a > 4000000)
 			break;
