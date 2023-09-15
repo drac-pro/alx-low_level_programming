@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_square - print a square using # character
+ * print_number - print a number
  *
- * @size: determines the size of the square
+ * @n: number to be printed
  *
  * Return: void
  */
