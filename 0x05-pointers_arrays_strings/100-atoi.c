@@ -14,7 +14,7 @@ int _atoi(char *s)
 		len++;
 	for (i = 0; i < len; i++)
 	{
-		a = (int)(str[i] - 48) + a * 10;
+		a = (int)(s[i] - 48) + a * 10;
 	}
 
 	return (a);
