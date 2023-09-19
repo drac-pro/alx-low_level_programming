@@ -11,7 +11,7 @@
  */
 int main(void)
 {
-	long long code;
+	unsigned long code;
 	int i;
 	char password[8];
 
@@ -20,7 +20,7 @@ int main(void)
 	for (i = 0; i < 8; i++)
 	{
 		code = (rand() % INT_MAX) + 48;
-		if ((code < 0 && code >= CHAR_MIN) || (code >= 0 && code <= CHAR_MAX))
+		if (code <= CHAR_MAX)
 		{
 		if (code == 32 || (code >=9 && code <= 13))
 		{
@@ -31,17 +31,12 @@ int main(void)
 		}
 		else
 		{
-			if (code < 0)
-				password[i] = (-code % CHAR_MAX);
-			else
-			{
 			if (code == 32 || (code >=9 && code <= 13))
 			{
 				i--;
 				continue;
 			}
 			password[i] = code % CHAR_MIN;
-			}
 		}
 	}
 	for (i = 0; i < 8; i++)
