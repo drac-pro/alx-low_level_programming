@@ -8,14 +8,24 @@
  */
 int _atoi(char *s)
 {
-	int len = 0, a = 0, i;
+	int num = 0, sign = 1;
 
-	while (s[len] != '\0')
-		len++;
-	for (i = 0; i < len; i++)
+	while (*s == ' ')
+		s++;
+
+	if (*s == '-')
 	{
-		a = (int)(s[i] - 48) + a * 10;
+		sign *= -1;
+		s++;
 	}
 
-	return (a);
+	while (*s)
+	{
+		if (*s < '0' || *s > '9')
+			break;
+		num = (int)(*s - 48) + num * 10;
+		s++;
+	}
+
+	return (num * sign);
 }
