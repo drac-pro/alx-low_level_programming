@@ -8,13 +8,16 @@
  */
 int _atoi(char *s)
 {
-	int num = 0, sign = 1;
+	unsigned int num = 0;
+	int sign = 1;
 
 	while (*s == ' ')
 		s++;
 
-	if (*s == '-')
+	if (*s == '-' || *s == '+')
 	{
+		if (*s == +)
+			continue;
 		sign *= -1;
 		s++;
 	}
@@ -22,7 +25,7 @@ int _atoi(char *s)
 	while (*s)
 	{
 		if (*s < '0' || *s > '9')
-			break;
+			continue;
 		num = (int)(*s - 48) + num * 10;
 		s++;
 	}
