@@ -19,7 +19,7 @@ int _atoi(char *s)
 
 	while (*s >= '0' && *s <= '9')
 	{
-		i = 1
+		i = 1;
 		num = (int)(*s - 48) + num * 10;
 		s++;
 	}
