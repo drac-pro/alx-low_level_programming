@@ -11,14 +11,14 @@
  */
 int main(void)
 {
-	int length = 8;	
+	int i, random_index, length = 8;	
 	char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
 
-	srand(time(0)); // seed the random number generator
+	srand(time(0));
 
-	for (int i = 0; i < length; i++)
+	for (i = 0; i < length; i++)
 	{
-		int random_index = rand() % (sizeof(charset) - 1);
+		random_index = rand() % (sizeof(charset) - 1);
 		printf("%c", charset[random_index]);
 	}
 	printf("\n");
