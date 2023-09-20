@@ -11,39 +11,18 @@
  */
 int main(void)
 {
-	unsigned long code;
-	int i;
-	char password[8];
+	int length = 8;	
+	char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
 
-	srand(time(0));
+	srand(time(0)); // seed the random number generator
 
-	for (i = 0; i < 8; i++)
+	for (int i = 0; i < length; i++)
 	{
-		code = (rand() % INT_MAX) + 48;
-		if (code <= CHAR_MAX)
-		{
-		if (code == 32 || (code >=9 && code <= 13))
-		{
-			i--;
-			continue;
-		}
-		password[i] = code;
-		}
-		else
-		{
-			if (code == 32 || (code >=9 && code <= 13))
-			{
-				i--;
-				continue;
-			}
-			password[i] = code % CHAR_MIN;
-		}
-	}
-	for (i = 0; i < 8; i++)
-	{
-		printf("%c", password[i]);
+		int random_index = rand() % (sizeof(charset) - 1);
+		printf("%c", charset[random_index]);
 	}
 	printf("\n");
-
+	
 	return 0;
 }
+
