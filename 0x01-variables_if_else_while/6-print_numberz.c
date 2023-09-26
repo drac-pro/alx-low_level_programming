@@ -11,9 +11,7 @@ int main(void)
 
 	while (i < 10)
 	{
-		int ascii_num = i + 48;
-
-		putchar(ascii_num);
+		putchar(i + 48);
 		i++;
 	}
 	putchar('\n');
