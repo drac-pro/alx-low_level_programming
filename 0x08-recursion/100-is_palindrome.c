@@ -11,9 +11,10 @@ int palindrome(char *s, int i, int len);
  */
 int is_palindrome(char *s)
 {
-	int len = _strlen_recursion(s) - 1;
+	int i = 0;
+	int len = (_strlen_recursion(s) - 1);
 
-	return (palindrome(s, 0, len));
+	return (palindrome(s, i, len));
 }
 
 /**
@@ -46,12 +47,9 @@ int _strlen_recursion(char *s)
  */
 int palindrome(char *s, int i, int len)
 {
-	if (len <= 0)
+	if (i >= len)
 		return (1);
-	if (s[i] != s[len])
-		return (0);
-	else if (i <= len)
-		palindrome(s, i + 1, len - 1);
-	else
-		return (1);
+	if (s[i] == s[len])
+		return (palindrome(s, i + 1, len - 1));
+	return (0);
 }
