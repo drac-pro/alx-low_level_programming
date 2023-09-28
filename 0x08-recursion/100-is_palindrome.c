@@ -52,5 +52,6 @@ int palindrome(char *s, int i, int len)
 		return (0);
 	else if (i <= len)
 		palindrome(s, i + 1, len - 1);
-	return (1);
+	else
+		return (1);
 }
