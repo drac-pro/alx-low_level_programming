@@ -50,7 +50,7 @@ int palindrome(char *s, int i, int len)
 		return (1);
 	if (s[i] != s[len])
 		return (0);
-	else if (i < len + 1)
+	else if (i < len)
 		palindrome(s, i + 1, len - 1);
 	return (1);
 }
