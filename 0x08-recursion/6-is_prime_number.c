@@ -25,11 +25,11 @@ int is_prime_number(int n)
 int is_prime(int n, int div)
 {
 	if (n <= 1)
-		return (0)
+		return (0);
 	if (div == 1)
 		return (1);
 	if (n % div != 0)
 		is_prime(n, --div);
 	else
-		return (0)
+		return (0);
 }
