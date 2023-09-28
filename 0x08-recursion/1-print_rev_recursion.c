@@ -9,19 +9,12 @@
  */
 void _print_rev_recursion(char *s)
 {
-	int i = 0;
-
-	while (s[i] != '\0')
-		i++;
-
 	/*base case*/
-	if (i == 0)
+	if (*s == '\n')
 	{
-		_putchar(s[i]);
-		_putchar('\n');
 		return;
 	}
 
-	_putchar(s[i - 1]);
-	_print_rev_recursion(s - 2);
+	_print_rev_recursion(s + 1);
+	_putchar(*s);
 }
