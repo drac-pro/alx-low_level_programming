@@ -26,8 +26,7 @@ int is_prime(int n, int div)
 {
 	if (n <= 1 || n % div == 0)
 		return (0);
-	else if (n % div != 0 && div != 2)
+	else (n % div != 0 && div != 2)
 		is_prime(n, div - 1);
-	else
-		return (1);
+	return (1);
 }
