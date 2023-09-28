@@ -10,10 +10,7 @@ int is_prime(int n, int div);
  */
 int is_prime_number(int n)
 {
-	int div;
-
-	div = n / 2;
-	return (is_prime(n, div));
+	return (is_prime(n, n / 2));
 }
 
 
@@ -27,12 +24,10 @@ int is_prime_number(int n)
  */
 int is_prime(int n, int div)
 {
-	if (n <= 1)
+	if (n <= 1 || n % div == 0)
 		return (0);
-	if (div == 1)
+	else if (n % div != 0 && div != 2)
+		is_prime(n, div - 1);
+	else
 		return (1);
-	else if ((n % div) == 0)
-		return (0);
-	is_prime(n, div - 1);
-	return (1);
 }
