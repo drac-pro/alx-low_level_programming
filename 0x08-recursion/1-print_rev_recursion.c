@@ -11,14 +11,14 @@ void _print_rev_recursion(char *s)
 {
 	int i = 0;
 
-	while (s[i] != '\n')
+	while (s[i] != '\0')
 		i++;
 
 	/*base case*/
 	if (i == 0)
 	{
 		_putchar(s[i]);
-		_putchar(\n);
+		_putchar('\n');
 		return;
 	}
 
