@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	for (i = 1; i < argc; i++)
 	{
 		if (strtol(argv[i], '\0', 10) == 0)
-			printf("Error\n"), exit(EXIT_SUCCESS);
+			printf("Error\n"), exit(EXIT_FAILURE);
 		if (atoi(argv[i]) >= 0)
 			sum += atoi(argv[i]);
 	}
