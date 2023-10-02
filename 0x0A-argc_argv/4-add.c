@@ -12,15 +12,18 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i, j, sum = 0;
 
 	if (argc < 2)
 		printf("0\n"), exit(EXIT_SUCCESS);
 
 	for (i = 1; i < argc; i++)
 	{
-		if (strtol(argv[i], '\0', 10) == 0)
-			printf("Error\n"), exit(EXIT_FAILURE);
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] < '0' || argv[i][j] > '9')
+				printf("Error\n"), exit(EXIT_SUCCESS);
+		}
 		if (atoi(argv[i]) >= 0)
 			sum += atoi(argv[i]);
 	}
