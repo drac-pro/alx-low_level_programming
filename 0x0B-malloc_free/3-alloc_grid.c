@@ -25,7 +25,7 @@ int **alloc_grid(int width, int height)
 		dim2[i] = calloc(width, sizeof(int));
 		if (dim2[i] == NULL)
 		{
-			for (; i >= 0; i--)
+			for (--i; i >= 0; i--)
 			{
 				free(dim2[i]);
 				return (NULL);
