@@ -13,10 +13,15 @@ int **alloc_grid(int width, int height)
 {
 	int **dim2, i;
 
+	if (width <= 0 || height <= 0)
+		return (NULL);
+
 	dim2 = malloc(sizeof(int *) * height);
 
 	for (i = 0; i < height; i++)
 		dim2[i] = calloc(width, sizeof(int));
+	if (dim2 == NULL)
+		return (NULL);
 
 	return (dim2);
 }
