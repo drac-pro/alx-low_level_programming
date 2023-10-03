@@ -16,7 +16,10 @@ int main(int argc, char *argv[])
 	int num, i = 0;
 
 	if (argc != 2)
-		printf("Error\n"), exit(EXIT_SUCCESS);
+	{
+		printf("Error\n");
+		return (0);
+	}
 	if (atoi(argv[1]) < 0)
 		printf("0\n"), exit(EXIT_SUCCESS);
 
