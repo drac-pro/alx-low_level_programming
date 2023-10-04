@@ -20,7 +20,7 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 		size += sizeof(av[i]);
 
-	_argconcat = malloc(size + 5);
+	_argconcat = malloc(size + ac + 1);
 
 	if (_argconcat == NULL)
 		return (NULL);
@@ -32,6 +32,7 @@ char *argstostr(int ac, char **av)
 		_argconcat[z] = '\n';
 		z++;
 	}
+	_argconcat[size + ac + 1] = '\0';
 
 	return (_argconcat);
 }
