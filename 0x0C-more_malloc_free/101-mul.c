@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	return (0);
 }
 /**
- * print_number - print a number
+ * print_num - print a number
  *
  * @n: number to be printed
  *
