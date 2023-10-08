@@ -16,7 +16,7 @@ int is_digit(char *str);
  */
 int main(int argc, char *argv[])
 {
-	int num;
+	unsigned long int num;
 
 	if (argc != 3)
 	{
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
  */
 void print_num(int n)
 {
-	unsigned int i = n;
+	unsigned long int i = n;
 
 	if (n < 0)
 	{
@@ -54,7 +54,7 @@ void print_num(int n)
 	i /= 10;
 	if (i != 0)
 		print_num(i);
-	_putchar((unsigned int)n % 10 + '0');
+	_putchar((unsigned long int)n % 10 + '0');
 }
 /**
  * print_str - print a srting using putchar
