@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 {
 	int num;
 
-	if (argc < 3)
+	if (argc != 3)
 	{
 		print_str("Error\n");
 		exit(98);
