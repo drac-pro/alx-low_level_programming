@@ -101,7 +101,7 @@ int is_digit(char *str)
  *
  * @str: pointer to the string
  *
- * Return: pointer to next non zero character 
+ * Return: pointer to next non zero character
  */
 char *remove_zero(char *str)
 {
