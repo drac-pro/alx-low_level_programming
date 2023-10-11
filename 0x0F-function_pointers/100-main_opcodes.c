@@ -11,35 +11,30 @@
  */
 int main(int argc, char **argv)
 {
-	FILE *code;
-	char ch;
-	int n, i;
-
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	if (atoi(argv[1]) < 0)
+	if (argv[1] < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
 
+	int n, i, (*mptr)(int, char **);
+	unsigned char opcode;
+
 	n = atoi(argv[1]);
-
-	code = fopen(__FILE__, "rb");
-	if (code == NULL)
-		return (0);
-	for (i = 0; i < n; i++)
+	mptr = &main;
+	for (i = 0; i < n; i++, mptr++)
 	{
-		ch = fgetc(code);
-		if (feof(code))
-			break;
-		printf("%02x ", (unsigned char)ch);
+		opcode = *(unsigned char *)mptr;
+		printf("%02x ", opcode);
+		if (i == n - 1)
+			continue;
+		printf(" ");
 	}
-	fclose(code);
-
 	printf("\n");
 
 	return (0);
