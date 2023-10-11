@@ -16,8 +16,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(1);
 	}
-	n = atoi(argv[1]);
-	if (n < 0)
+	if (atoi(argv[1]) < 0)
 	{
 		printf("Error\n");
 		exit(2);
@@ -26,6 +25,7 @@ int main(int argc, char **argv)
 	int n, i, (*mptr)(int, char **) = main;
 	unsigned char opcode;
 
+	n = atoi(argv[1]);
 	for (i = 0; i < n; i++)
 	{
 		opcode = *(unsigned char *)mptr;
