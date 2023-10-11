@@ -22,18 +22,18 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 
-	int n, i, (*mptr)(int, char **);
+	int n, i, (*mptr)(int, char **) = main;
 	unsigned char opcode;
 
 	n = atoi(argv[1]);
-	mptr = &main;
-	for (i = 0; i < n; i++, mptr++)
+	for (i = 0; i < n; i++)
 	{
 		opcode = *(unsigned char *)mptr;
-		printf("%02x ", opcode);
+		printf("%.2x", opcode);
 		if (i == n - 1)
 			continue;
 		printf(" ");
+		mptr++;
 	}
 	printf("\n");
 
