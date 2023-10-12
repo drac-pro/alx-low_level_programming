@@ -1,11 +1,5 @@
 #include "variadic_functions.h"
 
-typedef struct type_to_function
-{
-	char *type;
-	void (*f)(va_list all);
-} type_f;
-
 void print_char(va_list all);
 void print_int(va_list all);
 void print_float(va_list all);

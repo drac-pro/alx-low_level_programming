@@ -4,6 +4,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * struct type_to_function - Struct type_f
+ *
+ * @type: The type
+ * @f: The function associated
+ */
+typedef struct type_to_function
+{
+        char *type;
+        void (*f)(va_list all);
+} type_f;
+
 int _putchar(char c);
 
 int sum_them_all(const unsigned int n, ...);
