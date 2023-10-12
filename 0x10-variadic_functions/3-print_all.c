@@ -45,9 +45,11 @@ void print_str(va_list all)
 	char *str = va_arg(all, char *);
 
 	if (str == NULL)
+	{
 		printf("(nil)");
-	else
-		printf("%s", str);
+		return;
+	}
+	printf("%s", str);
 }
 /**
  * print_all - prints anything that is passed
