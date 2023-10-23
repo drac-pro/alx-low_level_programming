@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * print_listint - print all elements of a singly linked list
@@ -9,7 +10,7 @@
  */
 size_t print_listint(const listint_t *h)
 {
-	listint_t *current = h;
+	const listint_t *current = h;
 	unsigned int count = 0;
 
 	while (current)
