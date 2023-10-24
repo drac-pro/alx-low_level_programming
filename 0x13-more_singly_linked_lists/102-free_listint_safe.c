@@ -41,7 +41,7 @@ size_t free_listint_safe(listint_t **h)
 	return (count);
 }
 /**
- * find_loop_start - find the start of a loop in a linked list
+ * find_loop - find the start of a loop in a linked list
  *
  * @head: pointer to the first node of the list
  *
