@@ -17,7 +17,7 @@ size_t print_listint_safe(const listint_t *head)
 	unsigned int i, count = 0;
 
 	if (!head)
-		exit(98);
+		return (0);
 	while (slow && fast && fast->next)
 	{
 		slow = slow->next;
