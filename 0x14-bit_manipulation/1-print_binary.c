@@ -14,6 +14,17 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
-	print_binary(n >> 1);
-	_putchar((n & 1) + '0');
+	else if (n == 1)
+	{
+		_putchar('1');
+		return;
+	}
+	else
+	{
+		if (n > 0)
+		{
+			print_binary(n >> 1);
+			_putchar((n & 1) + '0');
+		}
+	}
 }
