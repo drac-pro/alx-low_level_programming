@@ -11,14 +11,5 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int diff, count = 0;
-
-	diff = n ^ m;
-	while (diff > 0)
-	{
-		if ((diff & 1) == 1)
-			count++;
-		diff >>= 1;
-	}
-	return (count);
+	return (__builtin_popcount(n ^ m));
 }
