@@ -30,6 +30,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	bytes = read(fd, buffer, letters);
+	if (bytes == -1)
+	{
+		free(buffer);
+		close(fd);
+		return (0);
+	}
 	buffer[bytes] = '\0';
 	printf("%s", buffer);
 	free(buffer);
