@@ -24,8 +24,8 @@ int main(int argc, char **argv)
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
-		handle_close(fd_from);
 		handle_error("Error: Error: Can't write to", argv[2], 99);
+		handle_close(fd_from);
 	}
 	while (bytes_read == 1024)
 	{
