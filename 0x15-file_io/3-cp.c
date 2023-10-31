@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 	while ((bytes_read = read(fd_from, buffer, 1024)) > 0)
 	{
 		bytes_written = write(fd_to, buffer, bytes_read);
-		if (bytes_written != bytes_read)
+		if (bytes_written == -1 || bytes_written != bytes_read)
 		{
 		handle_close(fd_from);
 		handle_close(fd_to);
