@@ -24,7 +24,8 @@ int main(int argc, char **argv)
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 		handle_error("Error: Can't read from file", argv[1], 98);
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR
+		| S_IRGRP | S_IWGRP | S_IROTH);
 	if (fd_to == -1)
 	{
 		handle_close(fd_from);
