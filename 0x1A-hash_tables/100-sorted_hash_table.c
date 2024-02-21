@@ -92,7 +92,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		current = ht->shead;
+	current = ht->shead;
 	while (current->snext != NULL && strcmp(current->snext->key, key) < 0)
 		current = current->snext;
 	new->sprev = current;
@@ -121,6 +121,8 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	if (!ht || !key || *key == '\0')
 		return (NULL);
 	index = key_index((const unsigned char *)key, ht->size);
+	if (index >= ht->size)
+		return (NULL);
 	current = ht->array[index];
 	if (!current)
 		return (NULL);
