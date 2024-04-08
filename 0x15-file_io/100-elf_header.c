@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
-		exit(98);
+		return (1);
 	}
 
 	read_elf_header(argv[1]);
