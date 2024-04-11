@@ -20,12 +20,12 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		return (NULL);
 
 	step = sqrt(size);
-	while (r && r->index < size && r->n < value)
+	while (r && r->index + 1 < size && r->n < value)
 	{
-		printf("value checked at index [%lu] = [%d]\n", r->index, r->n);
 		l = r;
 		for (i = 0; i < step && r->next; i++)
 			r = r->next;
+		printf("value checked at index [%lu] = [%d]\n", r->index, r->n);
 	}
 	printf("value found between indexes [%lu] and [%lu]\n", l->index, r->index);
 
